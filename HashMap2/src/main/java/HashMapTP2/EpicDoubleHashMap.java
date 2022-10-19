@@ -6,7 +6,7 @@ import java.util.Map;
 public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     HashMap<K, Codes> map1;
     HashMap<K, Colors> map2;
-
+//hola
     public EpicDoubleHashMap() {
         map1 = new HashMap<>();
         map2 = new HashMap<>();

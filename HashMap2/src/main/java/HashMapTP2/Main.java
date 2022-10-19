@@ -1,14 +1,13 @@
 package HashMapTP2;
 
-
 public class Main {
     public static void main(String[] args) {
         EpicDoubleHashMap<Integer, Integer, String> pantoneMap = new EpicDoubleHashMap<>();
 
         pantoneMap.addCode(1, 456);
-
+        pantoneMap.addCode(4, 289);
         pantoneMap.addColor(2, "Blue");
-
+        pantoneMap.addColor(5, "Yellow");
         pantoneMap.addCodeAndColor(3, 987, "Red");
 
         System.out.println("Codes");
@@ -23,9 +22,16 @@ public class Main {
 
 
         //EXTRA FUNCTIONALITIES
-        // QUANTITY OF CODES AND COLORS
+        // QUANTITY OF VALUES (CODES AND COLORS)
 
-        System.out.println("Number of Codes : " + pantoneMap.countCodes());
-        System.out.println("Number of Colors : " + pantoneMap.countColors());
+        System.out.println(pantoneMap.quantityOfValues());
+
+
+
+
+
+
+
+
     }
 }

@@ -8,6 +8,8 @@ public class Main {
 
         pantoneMap.addCode(1, 456);
         pantoneMap.addCode(4, 289);
+        pantoneMap.addCode(4, 189);
+
         pantoneMap.addColor(2, "Blue");
         pantoneMap.addColor(5, "Yellow");
         pantoneMap.addCodeAndColor(3, 987, "Red");
@@ -30,8 +32,8 @@ public class Main {
         System.out.println("\n");
 
         // Boolean (true for repeated values)
-        System.out.println("Boolean for repeated values");
-        System.out.println(pantoneMap.equals());
+        System.out.println("Boolean for repeated values: "+pantoneMap.equals());
+
 
 
 

@@ -1,6 +1,8 @@
 package HashMapTP2;
 
+import java.awt.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.lang.String;
 import java.util.Objects;
@@ -15,10 +17,21 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     }
 
     public void addCode(K key, Codes code) {
-        map1.put(key, code);
+        try {
+
+            if(map1.containsKey(key)){
+                throw new RuntimeException("Try with another key");
+            }else{
+                map1.put(key,code);
+            }
+        }catch (Exception e){
+         System.out.println(e);
+        }
+
     }
 
     public void addColor(K key, Colors color) {
+
         map2.put(key, color);
     }
 
@@ -47,8 +60,6 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
 
         String code = "";
         String color = "";
-        
-
 
         for (Map.Entry<K, Codes> entry : map1.entrySet()) {
             code += entry.getKey() + " = " + entry.getValue() + "\n";
@@ -61,6 +72,17 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
 
         return code + color;
     }
+
+    // EXCEPTIONS
+public void tryAddCode(K keys, Codes value){
+
+
+
+}
+
+
+
+
 
     //EXTRA FUNCTIONALITIES
     // QUANTITY OF CODES AND COLORS
@@ -93,7 +115,9 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     }
 
     public boolean equals() {
-        return this.map1.keySet().equals(map2.keySet());
+        //I think this next code it is wrong, because it compares keys not values:
+        //return this.map1.keySet().equals(map2.keySet());
+        return new HashSet<>(map1.values()).equals(new HashSet<>(map2.values()));
     }
 
 

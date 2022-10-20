@@ -7,8 +7,9 @@ public class Main {
         EpicDoubleHashMap<Integer, Integer, String> pantoneMap = new EpicDoubleHashMap<>();
 
         pantoneMap.addCode(1, 456);
-        pantoneMap.addCode(4, 289);
+        pantoneMap.addCode(1, 289);
         pantoneMap.addCode(4, 189);
+        pantoneMap.addCode(6, 189);
 
         pantoneMap.addColor(2, "Blue");
         pantoneMap.addColor(5, "Yellow");

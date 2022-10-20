@@ -1,11 +1,9 @@
 package HashMapTP2;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.lang.String;
-import java.util.Objects;
 
 public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     HashMap<K, Codes> map1;
@@ -24,8 +22,8 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
             }else{
                 map1.put(key,code);
             }
-        }catch (Exception e){
-         System.out.println(e);
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
         }
 
     }
@@ -43,7 +41,7 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     public String getCodes() {
         String code = "";
         for (Map.Entry<K, Codes> entry : map1.entrySet()) {
-            code += entry.getKey() + " = " + entry.getValue() + "\n";
+            code = code.concat(entry.getKey().toString()).concat("=").concat(entry.getValue().toString());
         }
         return code;
     }
@@ -93,13 +91,13 @@ public void tryAddCode(K keys, Codes value){
        int numberOfCodes=0;
        for (K i : map1.keySet())  {
            map1.get(i);
-           numberOfCodes += + 1;
+           numberOfCodes++;
           // System.out.println(map1.get(i));
        }
        int numberOfColors = 0;
        for (K i : map2.keySet()) {
            map2.get(i);
-           numberOfColors += +1;
+           numberOfColors++;
           // System.out.println(map2.get(i));
        }
 

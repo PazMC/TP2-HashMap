@@ -47,8 +47,7 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
 
         String code = "";
         String color = "";
-        String codeandcolor = "";
-        codeandcolor = code + " " + color;
+        
 
 
         for (Map.Entry<K, Codes> entry : map1.entrySet()) {

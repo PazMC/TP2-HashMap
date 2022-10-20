@@ -1,5 +1,7 @@
 package HashMapTP2;
 
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
         EpicDoubleHashMap<Integer, Integer, String> pantoneMap = new EpicDoubleHashMap<>();
@@ -22,10 +24,14 @@ public class Main {
 
 
         //EXTRA FUNCTIONALITIES
-        // QUANTITY OF VALUES (CODES AND COLORS)
+        // Quantity of Values (Codes and Colors)
 
         System.out.println(pantoneMap.quantityOfValues());
+        System.out.println("\n");
 
+        // Boolean (true for repeated values)
+        System.out.println("Boolean for repeated values");
+        System.out.println(pantoneMap.equals());
 
 
 

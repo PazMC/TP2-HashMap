@@ -2,11 +2,13 @@ package HashMapTP2;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.String;
+import java.util.Objects;
 
 public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     HashMap<K, Codes> map1;
     HashMap<K, Colors> map2;
-//hola
+
     public EpicDoubleHashMap() {
         map1 = new HashMap<>();
         map2 = new HashMap<>();
@@ -89,6 +91,10 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
 
        return "Number of Codes: "+String.valueOf(numberOfCodes)+"\n"+"Number of Colors: "+ String.valueOf(numberOfColors)+"\n"+quantityOfValues;
 
+    }
+
+    public boolean equals() {
+        return this.map1.keySet().equals(map2.keySet());
     }
 
 

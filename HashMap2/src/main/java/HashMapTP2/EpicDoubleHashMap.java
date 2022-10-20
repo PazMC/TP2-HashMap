@@ -2,11 +2,13 @@ package HashMapTP2;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.String;
+import java.util.Objects;
 
 public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
     HashMap<K, Codes> map1;
     HashMap<K, Colors> map2;
-//hola
+
     public EpicDoubleHashMap() {
         map1 = new HashMap<>();
         map2 = new HashMap<>();
@@ -45,8 +47,7 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
 
         String code = "";
         String color = "";
-        String codeandcolor = "";
-        codeandcolor = code + " " + color;
+        
 
 
         for (Map.Entry<K, Codes> entry : map1.entrySet()) {
@@ -61,23 +62,44 @@ public class EpicDoubleHashMap<K extends Number, Codes, Colors> {
         return code + color;
     }
 
-    public int countCodes (){
-        int numberOfCodes=0;
-        for (K i : map1.keySet())  {
-            map1.get(i);
-            numberOfCodes += + 1;
-            System.out.println(map1.get(i));
-        }
-        return numberOfCodes;
+    //EXTRA FUNCTIONALITIES
+    // QUANTITY OF CODES AND COLORS
+
+
+
+   public String quantityOfValues(){
+       int numberOfCodes=0;
+       for (K i : map1.keySet())  {
+           map1.get(i);
+           numberOfCodes += + 1;
+          // System.out.println(map1.get(i));
+       }
+       int numberOfColors = 0;
+       for (K i : map2.keySet()) {
+           map2.get(i);
+           numberOfColors += +1;
+          // System.out.println(map2.get(i));
+       }
+
+       String quantityOfValues;
+       String moreCodes = "There are more Codes than Colors";
+       String moreColors = "There are more Colors than Codes";
+       String sameQuantityValues = "There are the same quantity of Codes and Colors";
+       quantityOfValues=(numberOfCodes>numberOfColors)?moreCodes:(numberOfCodes<numberOfColors)?moreColors:sameQuantityValues;
+
+
+       return "Number of Codes: "+String.valueOf(numberOfCodes)+"\n"+"Number of Colors: "+ String.valueOf(numberOfColors)+"\n"+quantityOfValues;
+
     }
-    public int countColors () {
-        int numberOfColors = 0;
-        for (K i : map2.keySet()) {
-            map2.get(i);
-            numberOfColors += +1;
-            System.out.println(map2.get(i));
-        }
-        return numberOfColors;
+
+    public boolean equals() {
+        return this.map1.keySet().equals(map2.keySet());
     }
+
+
+
+
+
+
 
 }
